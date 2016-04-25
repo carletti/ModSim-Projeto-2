@@ -2,11 +2,11 @@
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 import numpy as np
-# Definindo equações
+# Definindo equaçâo
 def EquacoesDiferenciais(s, t):
     b = 0.35
     m = 0.65
-    dsdt = -(b*s) - (m*s)
+    dsdt = - (b*s) - (m*s)
     return dsdt
 # Definindo valores iniciais
 p0 = 10
