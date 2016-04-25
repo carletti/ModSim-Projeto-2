@@ -18,3 +18,10 @@ b =
 m =
 
 s = odeint(EquacoesDiferenciais, p0, s0, t, args=(a,g,b,m))
+
+plt.plot(t,  s)
+plt.ylabel('s(t)')
+plt.xlabel('t')
+plt.title(r'Quantidade de THC no sangue')
+plt.grid(True)
+plt.show
