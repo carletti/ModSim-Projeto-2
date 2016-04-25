@@ -6,8 +6,8 @@ import numpy as np
 def EquacoesDiferenciais(q, t):
     a = (95/100)
     g = (5/100)
-    b = (35/100)
-    m = (65/100)
+    b = (1/100)
+    m = (99/100)
     dpdt = -(a*q[0]) - (g*q[0])
     dsdt = (a*q[0]) - (b*q[1]) - (m*q[1])
     return [dpdt,dsdt]
