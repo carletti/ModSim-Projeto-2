@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 import numpy as np
