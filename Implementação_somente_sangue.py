@@ -3,22 +3,20 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 import numpy as np
 # Definindo equações
-def EquacoesDiferenciais(q, t):
-    a = 0.95
+def EquacoesDiferenciais(s, t):
     b = 0.35
     m = 0.65
-    dsdt = (a*q[0]) - (b*q[1]) - (m*q[1])
+    dsdt = -(b*s) - (m*s)
     return dsdt
 # Definindo valores iniciais
 p0 = 10
-s0 = 0   
-q0 = [p0, s0]
+s0 = p0*(95/100)
 # Definindo intervalo de tempo
 T = np.arange(0,100,0.0001)
 # Definindo odeint
-q = odeint(EquacoesDiferenciais, q0, T)
+s = odeint(EquacoesDiferenciais, s0, T)
 # Gráfico THCs X Tempo
-plt.plot(T, q)
+plt.plot(T, s)
 plt.ylabel('s(t)')
 plt.xlabel('t')
 plt.title(r'Quantidade de THC no sangue')
