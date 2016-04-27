@@ -4,19 +4,20 @@ import matplotlib.pyplot as plt
 import numpy as np
 # Definindo equações
 def EquacoesDiferenciais(q, t):
-    a = (95/100)
-    g = (5/100)
-    b = (1/100)
-    m = (99/100)
-    dpdt = -(a*q[0]) - (g*q[0])
-    dsdt = (a*q[0]) - (b*q[1]) - (m*q[1])
+    ka = (95/100)
+    ks = (5/100)
+    kmvmax = (10/100) # Concentrção por segundo 
+    kevmax = 0.9
+    
+    dpdt = -(ka*q[0]) - (ks*q[0])
+    dsdt = (ka*q[0]) - (kmvmax*q[1]) 
     return [dpdt,dsdt]
 # Definindo valores iniciais
 p0 = 10
 s0 = 0   
 q0 = [p0, s0]
 # Definindo intervalo de tempo
-T = np.arange(0,100,0.0001)
+T = np.arange(0,15,0.0001)
 # Definindo odeint
 q = odeint(EquacoesDiferenciais, q0, T)
 # Gráfico THCp X Tempo
